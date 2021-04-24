@@ -22,8 +22,8 @@ public class BatchLaunchConfig {
     @Qualifier("batchTransformJob")
     private final Job batchTransformJob;
 
-    @Scheduled(cron = "0 */1 * * * ?")
-    public void scheduleTransformJob() throws JobInstanceAlreadyCompleteException, JobExecutionAlreadyRunningException, JobParametersInvalidException, JobRestartException {
+      @Scheduled(cron = "0 */1 * * * ?")
+      public void scheduleTransformJob() throws JobInstanceAlreadyCompleteException, JobExecutionAlreadyRunningException, JobParametersInvalidException, JobRestartException {
         JobParameters jobParameters = new JobParametersBuilder()
                 .addString("date-time",LocalDateTime.now().toString())
                 .toJobParameters();
